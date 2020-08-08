@@ -1,0 +1,29 @@
+{
+  "name": "zoom-clone",
+  "version": "0.0.0",
+  "description": "A Zoom clone made with NodeJS",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YazeedAlKhalaf/Zoom_Clone.git"
+  },
+  "author": "Yazeed AlKhalaf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YazeedAlKhalaf/Zoom_Clone/issues"
+  },
+  "homepage": "https://github.com/YazeedAlKhalaf/Zoom_Clone#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
