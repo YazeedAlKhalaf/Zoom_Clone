@@ -126,3 +126,30 @@ const setStopButton = () => {
   `;
   document.querySelector("#main__video_button").innerHTML = html;
 };
+
+var showChatBool = false;
+const showOrHideChat = () => {
+  if (showChatBool) {
+    hideChat();
+  } else {
+    showChat();
+  }
+};
+
+const showChat = () => {
+  const mainRight = document.querySelector(".main__right");
+  const mainLeft = document.querySelector(".main__left");
+
+  showChatBool = true;
+  mainRight.classList.add("hide");
+  mainLeft.classList.add("chat-hidden");
+};
+
+const hideChat = () => {
+  const mainRight = document.querySelector(".main__right");
+  const mainLeft = document.querySelector(".main__left");
+
+  showChatBool = false;
+  mainRight.classList.remove("hide");
+  mainLeft.classList.remove("chat-hidden");
+};

@@ -27,7 +27,7 @@
   </head>
   <body>
     <div class="main">
-      <div class="main__left">
+      <div class="main__left chat-hidden">
         <div class="main__videos">
           <div id="video-grid"></div>
         </div>
@@ -60,7 +60,7 @@
               <i class="fas fa-user-friends"></i>
               <span>Participants</span>
             </div>
-            <div class="main__controls_button">
+            <div onclick="showOrHideChat()" class="main__controls_button">
               <i class="fas fa-comment-alt"></i>
               <span>Chat</span>
             </div>
@@ -74,7 +74,7 @@
         </div>
       </div>
 
-      <div class="main__right">
+      <div class="main__right hide">
         <div class="main__header">
           <h6>Chat</h6>
         </div>

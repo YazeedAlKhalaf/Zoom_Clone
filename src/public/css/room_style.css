@@ -131,3 +131,12 @@ video {
 .video_stopped {
   color: #eb534b;
 }
+
+.hide {
+  position: absolute;
+  visibility: hidden;
+}
+
+.chat-hidden {
+  flex: 1;
+}
