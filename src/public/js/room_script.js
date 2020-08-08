@@ -1,10 +1,14 @@
 const socket = io();
 
+var messages = document.querySelector(".messages");
+var message = document.getElementById("chat_message");
+
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
 myVideo.muted = true;
 
 var peer = new Peer();
+const userId = peer.id;
 
 navigator.mediaDevices
   .getUserMedia({
@@ -32,6 +36,20 @@ peer.on("open", (id) => {
   socket.emit("join-room", ROOM_ID, id);
 });
 
+document.body.addEventListener("keyup", function (e) {
+  if (e.keyCode == 13) {
+    socket.emit("message", message.value, USER_NAME);
+    message.value = "";
+  }
+});
+
+socket.on("createMessage", (message, userName) => {
+  const newLI = document.createElement("li");
+  newLI.innerHTML = `<li class="message"><strong>${userName}</strong><br />${message}</li>`;
+  messages.appendChild(newLI);
+  scrollToBottom();
+});
+
 const connectToNewUser = (userId, stream) => {
   const call = peer.call(userId, stream);
   const video = document.createElement("video");
@@ -46,4 +64,9 @@ const addVideoStream = (video, stream) => {
     video.play();
   });
   videoGrid.append(video);
+};
+
+const scrollToBottom = () => {
+  var d = $(".main__chat_window");
+  d.scrollTop(d.prop("scrollHeight"));
 };
