@@ -1,4 +1,13 @@
-exports.index = function (req, res, next) {
+const { v4: uuidv4 } = require("uuid");
+
+exports.createRoom = function (req, res, next) {
+  res.redirect(`${req.originalUrl}/${uuidv4()}`);
+};
+
+exports.enterRoom = function (req, res, next) {
   var roomId = req.params.roomId;
-  res.render("room", { roomId: roomId });
+  const options = {
+    roomId: roomId,
+  };
+  res.render("room", options);
 };
