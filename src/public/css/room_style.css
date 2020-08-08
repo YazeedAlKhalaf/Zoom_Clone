@@ -46,11 +46,11 @@ video {
   justify-content: space-between;
 }
 
-.main__controls__block {
+.main__controls_block {
   display: flex;
 }
 
-.main__controls__button {
+.main__controls_button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,11 +61,11 @@ video {
   transition: all 300ms ease-in-out;
 }
 
-.main__controls__button i {
+.main__controls_button i {
   font-size: 1.5rem;
 }
 
-.main__controls__button:hover {
+.main__controls_button:hover {
   background-color: #343434;
   border-radius: 0.3124rem;
 }
@@ -120,9 +120,14 @@ video {
 }
 
 .messages {
-  color: white;
   list-style: none;
 }
 
 .message {
+  color: white;
+}
+
+.mic_muted,
+.video_stopped {
+  color: #eb534b;
 }
